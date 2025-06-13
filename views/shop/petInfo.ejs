@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Contact Page Pawsville'}); %>
+
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <div
+        class="p-4 border-gray-200 min-h-screen border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <!-- <%- include('../templates/clock'); %> -->
+        <div class="flex flex-col">
+          <figure
+            class="w-full h-100 rounded-t-lg overflow-hidden flex justify-center items-center bg-slate-700"
+          >
+            <img
+              class="object-contain w-full h-full"
+              src="<%= pet.img_url %>"
+              alt="product image"
+            />
+          </figure>
+          <div class="bg-orange-50 p-2 rounded-b-lg">
+            <div>
+              <h1 class="text-center">
+                <span
+                  class="text-3xl sm:text-5xl lg:text-6xl righteous-regular text-orange-400 block"
+                  ><%= pet.name %></span
+                >
+                <ul
+                  class="[&>*]:inline-block [&>*]:pl-3 [&>*:not(:first-child)]:before:content-['•'] [&>*:not(:first-child)]:before:relative [&>*:not(:first-child)]:before:right-2 [&>*:not(:first-child)]:before:text-orange-400"
+                >
+                  <li class="text-slate-700 text-lg nunito-sans-regular">
+                    <%= pet.breed %>
+                  </li>
+                  <li class="text-slate-700 text-lg nunito-sans-regular">
+                    <%= pet.location %>
+                  </li>
+                </ul>
+              </h1>
+              <ul
+                class="[&>*]:inline-block [&>*]:pl-3 [&>*:not(:first-child)]:before:content-['•'] [&>*:not(:first-child)]:before:relative [&>*:not(:first-child)]:before:right-2 [&>*:not(:first-child)]:before:text-orange-400 text-center"
+              >
+                <li class="text-slate-700 text-lg nunito-sans-regular">
+                  <%= pet.age %> years old
+                </li>
+                <li class="text-slate-700 text-lg nunito-sans-regular">
+                  <%= pet.gender%>
+                </li>
+              </ul>
+            </div>
+            <div class="sticky"></div>
+
+            <h2
+              class="text-3xl sm:text-5xl text-orange-500 whitespace-nowrap nunito-sans-regular"
+            >
+              About
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+  </body>
+</html>

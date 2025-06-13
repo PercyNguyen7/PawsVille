@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Give Pet to PawsVille'}); %>
+
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <div
+        class="p-4 border-gray-200 min-h-screen border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <!-- <%- include('../templates/clock'); %> -->
+        <h1 class="h1-style">Give Away Your Pet</h1>
+        <h3 class="h3-style">
+          Please fill in submit the form to begin the process
+        </h3>
+        <form
+          class="border-1 border-orange-200 rounded-md bg-orange-50 text-orange-600 p-5 my-3 md:p-10 [&>*]:mb-4"
+          id="give-pet-form"
+        >
+          <div class="form-group">
+            <label class="inline font-semibold" for="pet-name">Pet Name:</label>
+
+            <input
+              type="text"
+              id="pet-name"
+              name="pet-name"
+              placeholder="Charlie"
+              class="p-0"
+              maxlength="20"
+              pattern="^[A-Za-z ]+$"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="inline font-semibold" for="pet-type-cat"
+              >Pet Type:</label
+            >
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="pet-type-cat"
+                name="type"
+                value="cat"
+                required
+              />
+              <label for="pet-type-cat">Cat</label>
+            </div>
+            <div class="inline pl-2">
+              <input type="radio" id="pet-type-dog" name="type" value="dog" />
+              <label for="pet-type-dog">Dog</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pet-breed" class="font-semibold">Your pet breed:</label>
+            <input
+              type="text"
+              id="pet-breed"
+              name="breed"
+              class="p-0"
+              placeholder="Golden Retriever"
+              maxlength="22"
+              pattern="^[A-Za-z ]+$"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="inline font-semibold">Age Range (0-20):</label>
+            <div class="my-2 inline">
+              <label for="min-age">Min </label>
+              <input
+                type="number"
+                name="min-age"
+                id="min-age"
+                placeholder="1"
+                min="0"
+                max="20"
+                class="py-0 bg-white w-20 number-inputs"
+                required
+              />
+            </div>
+            <div class="my-2 inline">
+              <label for="max-age">Max </label>
+              <input
+                type="number"
+                name="max-age"
+                id="max-age"
+                min="0"
+                placeholder="20"
+                max="20"
+                class="py-0 bg-white w-20 number-inputs"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-semibold" for="pet-gender-male">Gender:</label>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="pet-gender-male"
+                name="gender"
+                value="Male"
+              />
+              <label for="pet-gender-male">Male</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="pet-gender-female"
+                name="gender"
+                value="Female"
+              />
+              <label for="pet-gender-female">Female</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="font-semibold">Get along with</p>
+
+            <div>
+              <input type="checkbox" id="friendly-dogs" name="friendly-dogs" />
+              <label for="friendly-dogs">Dogs</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="friendly-cats" name="friendly-cats" />
+              <label for="friendly-cats">Cats</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="friendly-children"
+                name="friendly-children"
+              />
+              <label for="friendly-children">Children</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-semibold" for="comment"
+              >Any note about your pet:</label
+            >
+
+            <textarea
+              class="block w-full bg-white"
+              rows="5"
+              id="comment"
+              placeholder="allergies, behaviors, anything important"
+              name="comment"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label class="font-semibold" for="img-url">Pet Image URL:</label>
+            <input type="text" name="img-url" id="img-url" required />
+          </div>
+          <div class="form-group">
+            <label class="block font-semibold">Owner's Name:</label>
+            <label class="p-0"
+              >First:
+              <input
+                type="text"
+                class="p-0"
+                id="owner-fname"
+                name="owner-fname"
+                placeholder="Jane"
+                pattern="^[A-Za-z ]+$"
+                required
+              />
+            </label>
+            <label class="p-0"
+              >Last:
+              <input
+                type="text"
+                class="p-0"
+                id="owner-lname"
+                name="owner-lname"
+                placeholder="Doe"
+                pattern="^[A-Za-z ]+$"
+                required
+              />
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="block font-semibold">Owner's Email:</label>
+            <input
+              type="email"
+              class="p-0"
+              id="givePet-email"
+              name="owner-email"
+              placeholder="email@gmail.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="block font-semibold">Owner's Location:</label>
+            <input
+              type="text"
+              class="p-0"
+              id="givePet-location"
+              name="owner-location"
+              placeholder="City, Province"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="cursor-pointer border-1 rounded-md px-5 py-2 text-center mr-2 bg-orange-500 text-white"
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+            class="cursor-pointer border-1 rounded-md px-5 py-2 text-center bg-white"
+          >
+            Clear
+          </button>
+        </form>
+      </div>
+    </div>
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+  </body>
+</html>

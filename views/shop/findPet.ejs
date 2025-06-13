@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Find your Pet'}); %>
+  <!-- As I have already designed responsive website in CSS before, I'm opting to learn Tailwind CSS, and hence exploring Flowbite templates -->
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <!-- <div
+        class="p-4 border-gray-200 min-h-screen border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <h1 class="h1-style">Find a Pet</h1>
+        <h3 class="h3-style">
+          Fill in the form and click submit to find your next pet!
+        </h3>
+
+        <form
+          id="findPetForm"
+          class="border-1 border-orange-200 shadow-sm rounded-md bg-orange-50 text-orange-600 p-5 md:p-10 [&>*]:mb-4"
+        >
+          <div class="form-group">
+            <p class="inline font-semibold">Pet Type:</p>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="form-find-cat-radio"
+                name="form-find-type"
+                value="cat"
+                required
+              />
+              <label for="form-find-cat-radio">Cat</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="form-find-dog-radio"
+                name="form-find-type"
+                value="dog"
+              />
+              <label for="form-find-dog-radio">Dog</label>
+            </div>
+          </div>
+
+          <div class="form-group overflow-auto">
+            <label for="form-find-dog-breed-select" class="font-semibold"
+              >Choose a dog breed:</label
+            >
+            <select
+              name="form-find-dog-breed-select"
+              id="form-find-dog-breed-select"
+              class="p-1 bg-white lg:w-60"
+            >
+              <option value="all-dog">All</option>
+              <option value="frenchBulldog">French Bulldog</option>
+              <option value="labradorRetriever">Labrador Retriever</option>
+              <option value="goldenRetriever">Golden Retriever</option>
+              <option value="germanShepherd">German Shepherd</option>
+              <option value="poodle">Poodle</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="font-semibold">Choose a cat breed:</label>
+            <select
+              name="cat-breed"
+              id="form-find-cat-breed-select"
+              class="p-1 bg-white"
+            >
+              <option value="all-dog">All</option>
+              <option value="ragdoll">Ragdoll</option>
+              <option value="maineCoon">Maine Coon</option>
+              <option value="britishShorthair">British Shorthair</option>
+              <option value="scottishFold">Scottish Fold</option>
+              <option value="sphynx">Sphynx</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="inline font-semibold">Age Range (0-20):</label>
+            <div class="my-2 inline">
+              <label for="form-find-min-age">Min</label>
+
+              <input
+                type="number"
+                name="form-find-min-age"
+                id="form-find-min-age"
+                placeholder="1"
+                min="0"
+                max="20"
+                class="py-0 bg-white w-20 number-inputs"
+                required
+              />
+            </div>
+            <div class="my-2 inline">
+              <label for="form-find-max-age">Max</label>
+              <input
+                type="number"
+                name="form-find-max-age"
+                id="form-find-max-age"
+                placeholder="20"
+                min="0"
+                max="20"
+                class="py-0 bg-white w-20 number-inputs"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <p class="font-semibold inline">Gender:</p>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="form-find-pet-gender-male"
+                name="form-find-pet-gender"
+                value="male"
+                required
+              />
+              <label for="form-find-pet-gender-male">Male</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="form-find-pet-gender-female"
+                name="form-find-pet-gender"
+                value="female"
+              />
+              <label for="form-find-pet-gender-female">Female</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="form-find-pet-gender-either"
+                name="form-find-pet-gender"
+                value="either"
+              />
+              <label for="form-find-pet-gender-either">Either</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="font-semibold">Get along with (optional)</label>
+
+            <div>
+              <input
+                type="checkbox"
+                id="form-find-get-along-dog"
+                name="form-find-get-along"
+              />
+              <label for="form-find-get-along-dog">Dog</label>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                id="form-find-get-along-cat"
+                name="form-find-get-along"
+              />
+              <label for="form-find-get-along-cat">Cat</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="form-find-get-along-children"
+                name="form-find-get-along"
+              />
+              <label for="form-find-get-along-children">Children</label>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="cursor-pointer border-1 rounded-md px-5 py-2 text-center mr-2 bg-orange-500 text-white"
+          >
+            Submit
+          </button>
+          <button
+            class="cursor-pointer border-1 rounded-md px-5 py-2 text-center bg-white"
+          >
+            Clear
+          </button>
+        </form>
+      </div> -->
+    </div>
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+  </body>
+</html>

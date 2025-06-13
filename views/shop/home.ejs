@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Homepage Pawsville'}); %>
+
+  <!-- As I have already designed responsive website in CSS before, I'm opting to learn Tailwind CSS, and hence exploring Flowbite templates -->
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <div
+        class="border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 p-4"
+      >
+        <!-- <%- include('../templates/clock'); %> -->
+        <div class="lg:flex lg:flex-row items-center justify-center w-full">
+          <div class="text-center lg:text-left">
+            <h1 class="">
+              <span
+                class="block whitespace-nowrap text-5xl md:text-6xl mt-16 text-slate-700 righteous-regular"
+              >
+                Welcome to
+              </span>
+              <span
+                class="block text-6xl md:text-8xl xl:text-8xl 2xl:text-9xl text-orange-400 righteous-regular"
+                >PawsVille</span
+              >
+            </h1>
+            <h3 class="h3-style mb-3.5 py-2">
+              Adopt your next companion here!
+            </h3>
+            <a
+              class="bg-white border-2 border-orange-200 text-2xl text-orange-400 rounded-xl py-3 px-5 font-semibold mt-1 inline-block"
+              href="browsePets"
+            >
+              Browse Pets
+            </a>
+          </div>
+          <figure class="relative">
+            <img
+              class="max-h-100 md:w-full lg:max-h-120 relative z-10"
+              src="./imgs/dog_cat4.png"
+              alt=""
+            />
+
+            <div
+              class="absolute top-10 left-0 right-0 m-auto bottom-20 w-35 h-35 sm:w-45 sm:h-45 md:bottom-10 md:w-60 md:h-60 lg:bottom-30 lg:w-70 lg:h-70 xl:h-90 xl:w-90 rounded-full bg-slate-700 z-5"
+            ></div>
+          </figure>
+        </div>
+
+        <figure class="max-w-screen-md mx-auto text-center">
+          <svg
+            class="w-10 h-10 mx-auto mb-3 text-orange-700 dark:text-orange-600"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 18 14"
+          >
+            <path
+              d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+            />
+          </svg>
+          <blockquote>
+            <p
+              class="text-3xl italic font-medium text-gray-900 dark:text-slate-700"
+            >
+              "WOOF WOOF, woof woof Woof!"
+              <span class="font-normal"> *wags tail*</span>
+            </p>
+          </blockquote>
+          <figcaption
+            class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse"
+          >
+            <!-- <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture"> -->
+            <div
+              class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700"
+            >
+              <cite class="pe-3 font-medium text-gray-900 dark:text-slate-700"
+                >Prim</cite
+              >
+              <cite class="ps-3 text-sm text-gray-500 dark:text-orange-700"
+                >Woof of the Month</cite
+              >
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- <div class="my-10 grid grid-cols-3 gap-4 mb-4">
+        <div
+          class="flex items-center justify-center h-24 rounded-sm bg-gray-50 dark:bg-orange-50"
+        >
+          <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <svg
+              class="w-3.5 h-3.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 18 18"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 1v16M1 9h16"
+              />
+            </svg>
+          </p>
+        </div>
+        <div
+          class="flex items-center justify-center h-24 rounded-sm bg-gray-50 dark:bg-orange-50"
+        >
+          <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <svg
+              class="w-3.5 h-3.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 18 18"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 1v16M1 9h16"
+              />
+            </svg>
+          </p>
+        </div>
+        <div
+          class="flex items-center justify-center h-24 rounded-sm bg-gray-50 dark:bg-orange-50"
+        >
+          <p class="text-2xl text-gray-400 dark:text-gray-500">
+            <svg
+              class="w-3.5 h-3.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 18 18"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 1v16M1 9h16"
+              />
+            </svg>
+          </p>
+        </div>
+      </div> -->
+    </div>
+
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

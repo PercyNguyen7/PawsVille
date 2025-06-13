@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./templates/header' , {title: 'Page Not Found - Pawsville'}); %>
+
+  <body class="bg-orange-100">
+    <%- include('./templates/nav'); %> <%- include('./templates/aside'); %>
+
+    <div class="sm:ml-50 xl:ml-70 p-2 ml:p-5">
+      <div
+        class="p-4 border-gray-200 min-h-screen border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <%- include('./templates/clock'); %>
+        <h1
+          class="text-5xl sm:text-6xl lg:text-8xl righteous-regular text-orange-400"
+        >
+          Ruh Roh 404
+        </h1>
+        <div
+          class="bg-amber-50 border-1 border-orange-200 p-3 sm:p-5 rounded-2xl shadow-sm"
+        >
+          <h3 class="text-2xl sm:text-4xl text-orange-500 nunito-sans-regular">
+            The page you are looking for does not exist!
+          </h3>
+          <div class="w-full mt-5">
+            <img
+              class="w-full"
+              src="https://images.unsplash.com/photo-1565239500265-bd02167453ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./templates/footer'); %> <%- include('./templates/scripts'); %>
+  </body>
+</html>

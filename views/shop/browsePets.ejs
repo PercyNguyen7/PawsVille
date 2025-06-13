@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Browse Pets'}); %>
+
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <div
+        class="p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <!-- <%- include('../templates/clock'); %> -->
+        <h1 class="h1-style">Browse a Pet</h1>
+        <h3 class="h3-style">
+          Fill in the form and click submit to find your next pet!
+        </h3>
+
+        <form
+          id="find-pet-form"
+          class="border-1 border-orange-200 shadow-sm rounded-md bg-orange-50 text-orange-600 p-5 md:p-10 [&>*]:mb-4"
+          method="get"
+          action="/browse"
+        >
+          <div class="form-group">
+            <p class="inline font-semibold">Pet Type:</p>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="cat-radio"
+                name="type"
+                value="cat"
+                required
+              />
+              <label for="cat-radio">Cat</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="dog-radio"
+                name="type"
+                value="dog"
+                required
+              />
+              <label for="dog-radio">Dog</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-semibold">Choose a cat breed:</label>
+            <select
+              name="cat-breed"
+              id="cat-breed-select"
+              class="p-1 bg-white"
+            ></select>
+          </div>
+          <div class="form-group overflow-auto">
+            <label for="dog-breed-select" class="font-semibold"
+              >Choose a dog breed:</label
+            >
+            <select
+              name="dog-breed"
+              id="dog-breed-select"
+              class="p-1 bg-white lg:w-60"
+            ></select>
+          </div>
+          <div class="form-group">
+            <label class="inline font-semibold">Age Range (0-20):</label>
+            <div class="my-2 inline">
+              <label for="min-age">Min</label>
+
+              <input
+                type="number"
+                name="min-age"
+                id="min-age"
+                placeholder="1"
+                min="0"
+                max="20"
+                class="py-0 bg-white w-20 number-inputs"
+              />
+            </div>
+            <div class="my-2 inline">
+              <label for="max-age">Max</label>
+              <input
+                type="number"
+                name="max-age"
+                id="max-age"
+                placeholder="20"
+                min="0"
+                max="20"
+                class="py-0 bg-white w-20 number-inputs"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <p class="font-semibold inline">Gender:</p>
+            <div class="inline pl-2">
+              <input type="radio" id="gender-male" name="gender" value="Male" />
+              <label for="gender-male">Male</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="gender-female"
+                name="gender"
+                value="Female"
+              />
+              <label for="gender-female">Female</label>
+            </div>
+            <div class="inline pl-2">
+              <input
+                type="radio"
+                id="gender-either"
+                name="gender"
+                value="either"
+              />
+              <label for="gender-either">Either</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="font-semibold">Get along with (optional)</label>
+            <label for="friendly-dogs">
+              <input type="checkbox" id="friendly-dogs" name="friendly-dogs" />
+              Dog</label
+            >
+            <label for="friendly-cats">
+              <input type="checkbox" id="friendly-cats" name="friendly-cats" />
+              Cat</label
+            >
+            <label for="friendly-children">
+              <input
+                type="checkbox"
+                id="friendly-children"
+                name="friendly-children"
+              />
+              Children</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="cursor-pointer border-1 rounded-md px-5 py-2 text-center mr-2 bg-orange-500 text-white"
+          >
+            Submit
+          </button>
+          <button
+            class="cursor-pointer border-1 rounded-md px-5 py-2 text-center bg-white"
+          >
+            Clear
+          </button>
+        </form>
+      </div>
+      <div
+        class="p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <h2 class="h1-style">Our current Pets</h2>
+
+        <div
+          class="browse-pets-container grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start border-amber-400 gap-5 lg:gap-10"
+        >
+          <% data.forEach(function(pet) { %>
+
+          <div
+            class="bg-amber-50 rounded-lg border-1 shadow-sm border-orange-200"
+          >
+            <figure
+              class="rounded-t-lg overflow-hidden flex items-center aspect-[1/1]"
+            >
+              <img
+                class="rounded-t-lg"
+                src="<%= pet.img_url %>"
+                alt="product image"
+              />
+            </figure>
+            <div class="px-5 pb-5 py-2 text-center">
+              <h5
+                class="text-3xl font-semibold tracking-tight text-slate-700 righteous-regular"
+              >
+                <%= pet.name %>
+              </h5>
+              <ul
+                class="[&>*]:inline-block [&>*]:pl-3 [&>*]:before:content [&>*]:before:right-2 [&>*]:before:relative [&>*]:before:content-['•'] [&>*]:before:text-orange-400"
+              >
+                <li class="text-slate-700 nunito-sans-regular">
+                  <%= pet.type %>
+                </li>
+                <li class="text-slate-700 nunito-sans-regular">
+                  <%= pet.breed %>
+                </li>
+                <li class="text-slate-700 nunito-sans-regular">
+                  <%= pet.gender %>
+                </li>
+                <li class="text-slate-700 nunito-sans-regular">
+                  <%= pet.age %> yrs old
+                </li>
+                <li class="text-slate-700 nunito-sans-regular">
+                  <%= pet.friendlyToStr %>
+                </li>
+                <li class="text-slate-700 nunito-sans-regular">
+                  <%= pet.location %>
+                </li>
+              </ul>
+              <div class="flex items-center justify-center">
+                <button
+                  class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg px-3 py-2 text-center text-lg mt-2"
+                >
+                  Interested
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+  </body>
+</html>

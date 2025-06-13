@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Sign In to PawsVille'}); %>
+  <!-- As I have already designed responsive website in CSS before, I'm opting to learn Tailwind CSS, and hence exploring Flowbite templates -->
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <div
+        class="p-4 border-gray-200 min-h-screen border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <!-- <%- include('../templates/clock'); %> -->
+        <h1
+          class="text-3xl sm:text-6xl lg:text-8xl righteous-regular text-orange-400"
+        >
+          Signin to PawsVille
+        </h1>
+        <form
+          id="sign-in-form"
+          class="border-1 border-orange-200 shadow-sm rounded-md bg-orange-50 text-orange-600 p-5 md:p-10 [&>*]:mb-2"
+        >
+          <label for="username" class="block">Username</label>
+          <input
+            type="text"
+            name="username"
+            pattern="^[A-Za-z0-9]+$"
+            required
+          />
+
+          <label for="password" class="block">Password</label>
+          <input
+            type="password"
+            type="text"
+            name="password"
+            pattern="^[A-Za-z0-9]+$"
+            minlength="4"
+            required
+          />
+          <button
+            type="submit"
+            class="block cursor-pointer border-1 rounded-md px-5 py-2 text-center my-2 bg-orange-500 text-white"
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+  </body>
+</html>

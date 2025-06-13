@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Righteous&display=swap");
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@import "tailwindcss";
+.h1-style {
+  font-family: "Righteous";
+  @apply text-5xl sm:text-6xl xl:text-8xl  text-orange-400 mb-2;
+}
+.h3-style {
+  font-family: "Nunito Sans";
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+  @apply text-2xl sm:text-3xl xl:text-4xl text-slate-700 mb-4;
+}
+
+.progress-bar {
+  width: 100%;
+  transform-origin: 0 50%;
+  animation: scaleProgress auto linear;
+  animation-timeline: scroll(root);
+}
+@keyframes scaleProgress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+svg {
+  color: rgb(233, 157, 94) !important;
+}
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.righteous-regular {
+  font-family: "Righteous", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-sans-regular {
+  font-family: "Nunito Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+}
+
+/* 
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.show .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+} */

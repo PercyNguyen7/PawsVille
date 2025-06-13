@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header' , {title: 'Contact Page Pawsville'}); %>
+
+  <body class="bg-orange-100">
+    <%- include('../templates/nav'); %> <%- include('../templates/aside'); %>
+
+    <div class="sm:ml-50 xl:ml-70 p-5">
+      <div
+        class="p-4 border-gray-200 min-h-screen border-dashed rounded-lg dark:border-gray-700 mt-14"
+      >
+        <!-- <%- include('../templates/clock'); %> -->
+        <h1
+          class="text-3xl sm:text-6xl lg:text-8xl righteous-regular text-orange-400"
+        >
+          Contact
+        </h1>
+        <div
+          class="bg-amber-50 border-1 border-orange-200 p-5 w-min rounded-2xl shadow-sm"
+        >
+          <h3
+            class="text-xl sm:text-2xl text-orange-500 whitespace-nowrap nunito-sans-regular"
+          >
+            Vinh Tuan Dat (Percy) Nguyen
+          </h3>
+          <h3
+            class="text-xl sm:text-2xl text-orange-500 whitespace-nowrap nunito-sans-regular"
+          >
+            40180660
+          </h3>
+          <h3
+            class="text-xl sm:text-2xl text-orange-500 whitespace-nowrap nunito-sans-regular"
+          >
+            percy.nguyen7@gmail.com
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../templates/footer'); %> <%- include('../templates/scripts');
+    %>
+  </body>
+</html>
