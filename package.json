@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"nodemon ./server\" \"npx tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch \"",
+    "start": "node server",
     "build-css": "npx tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch",
     "start:dev": "concurrently \"nodemon ./server\" \"npx tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch \""
   },
