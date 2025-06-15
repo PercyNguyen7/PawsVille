@@ -1,4 +1,4 @@
-#  🐶😺 About PawsVille
+#  🐶😺 PawsVille
 ## 🎯 Purpose 
 Check out [Pawsville](https://pawsville.onrender.com/)!🐕🐈  
 
