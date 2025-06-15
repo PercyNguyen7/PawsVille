@@ -15,7 +15,15 @@ const petsRoutes = require("./routes/pets.js");
 
 // ************ MIDLEWARE ***************************
 // Helmet middleware for secure responses
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      imgSrc: ["'self'", "*"],
+      // Add other directives as needed
+    },
+  })
+);
 // app.use(compression());
 // SESSION middleware
 app.use(
