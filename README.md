@@ -1,19 +1,20 @@
-# About PawsVille
-## 1. Purpose
-Check out the [pet website]([url](https://pawsville.onrender.com/))
+#  🐶😺 About PawsVille
+## 🎯 Purpose 
+Check out [Pawsville](https://pawsville.onrender.com/)!🐕🐈  
+
 PawsVille is a fictional Pet Adoption website specific for cats and dogs! The center contains the following services:
   1. Pets Available for Adoption
   2. Giving Pets Away
   3. Login System 
   4. Cat and Dog Care Resources
      
-## 2. Development Process
+## 🧑‍💻 Development Process 
 ### 1. Tools
   - **Design:** originally designed and assembled in Figma  
   - **Development:** Built Express.JS, Node.JS, Javascript and styled with TailwindCSS    
   - **Images & Icons:** To be updated
 
-### 2. Obstacles
+### 2. Obstacles 
   1. Separation of File Logic
     - Challenge: As the project's complexity evolves, the server.js file become pacted and the pet object (which represents any singular pet) containing more attributes, the backend JS files demanded to be split into logical units.
     - Solution: Adopting the Model-view-controller software architectural pattern
@@ -21,12 +22,12 @@ PawsVille is a fictional Pet Adoption website specific for cats and dogs! The ce
         - View: A list of EJS files, visual representations that render the appropriate page dynamically. EJS was chosen for its ability to generate dynamic data as well as reusing code via HTML templates.
         - Controller: 
 
-## Instructions
+## ⬇️ Installation Instructions 
 
 Please use command  
 `npm run start`
 
-## File structure
+## 🗃️ File structure 
 
 Ex 1,2,3 source codes can be found in folder q1, q2 and q3.  
 Ex 4 source code is in the current folder (A3).
@@ -54,14 +55,3 @@ Ex 4 source code is in the current folder (A3).
 
 - all `ejs files` and templates
 
-## Q4 Change Log
-
-- **Additional Feature**
-
-  - Dynamic Pet Rendering
-    - All new pet submitted on givePet page will immediately be featured on the findPet page. Their breed will also appear on the form for browsing.
-
-- **Minor change**
-
-  - JSON files are used instead of txt file as I wish to incorporate API with this project in the future
-  - sign-in page will not load the givePet page, but redirect you to the homepage instead. However, givePet page is still only accessable once user is logged in.
