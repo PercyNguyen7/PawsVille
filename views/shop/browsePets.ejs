@@ -21,39 +21,30 @@
           method="get"
           action="/browse"
         >
-          <div class="form-group">
+          <div class="form-group ">
             <p class="inline font-semibold">Pet Type:</p>
             <div class="inline pl-2">
-              <input
-                type="radio"
-                id="cat-radio"
-                name="type"
-                value="cat"
-                required
-              />
+              <input type="radio" id="cat-radio" name="type" value="cat"
+              required <%= params.type === 'cat' ? 'checked' : '' %> />
               <label for="cat-radio">Cat</label>
             </div>
             <div class="inline pl-2">
-              <input
-                type="radio"
-                id="dog-radio"
-                name="type"
-                value="dog"
-                required
-              />
+              <input type="radio" id="dog-radio" name="type" value="dog"
+              required <%= params.type === 'dog' ? 'checked' : '' %> />
               <label for="dog-radio">Dog</label>
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group " id="cat-breed-select-wrapper">
             <label class="font-semibold">Choose a cat breed:</label>
-            <select
-              name="cat-breed"
-              id="cat-breed-select"
-              class="p-1 bg-white"
-            ></select>
+            <select name="cat-breed" id="cat-breed-select" class="p-1 bg-white">
+              <option value="all-cat" <%= params.catBreed === 'all-cat' ? 'selected' : "" %> >All</option>
+              <% catBreeds.forEach(function(breed){ %>
+              <option value="<%= breed %>" <%= params.catBreed === breed ? 'selected' : "" %>><%= breed %></option>
+              <% }); %>
+            </select>
           </div>
-          <div class="form-group overflow-auto">
+          <div class="form-group " id="dog-breed-select-wrapper">
             <label for="dog-breed-select" class="font-semibold"
               >Choose a dog breed:</label
             >
@@ -61,7 +52,12 @@
               name="dog-breed"
               id="dog-breed-select"
               class="p-1 bg-white lg:w-60"
-            ></select>
+            >
+              <option value="all-dog" <%= params.dogBreed === 'all-dog' ? 'selected' : "" %>>All</option>
+              <% dogBreeds.forEach(function(breed) { %>
+              <option value="<%= breed %>" <%= params.dogBreed === breed ? 'selected' : "" %>><%= breed %></option>
+              <% }); %>
+            </select>
           </div>
           <div class="form-group">
             <label class="inline font-semibold">Age Range (0-20):</label>
@@ -76,6 +72,7 @@
                 min="0"
                 max="20"
                 class="py-0 bg-white w-20 number-inputs"
+                value=<%= params.minAge ? params.minAge : '' %>
               />
             </div>
             <div class="my-2 inline">
@@ -88,6 +85,7 @@
                 min="0"
                 max="20"
                 class="py-0 bg-white w-20 number-inputs"
+                value=<%= params.maxAge ? params.maxAge : '' %>
               />
             </div>
           </div>
@@ -95,7 +93,12 @@
           <div class="form-group">
             <p class="font-semibold inline">Gender:</p>
             <div class="inline pl-2">
-              <input type="radio" id="gender-male" name="gender" value="Male" />
+              <input 
+              type="radio" 
+              id="gender-male" 
+              name="gender" 
+              value="Male" 
+              <%= params.gender ==='Male' ? 'checked' : '' %>/>
               <label for="gender-male">Male</label>
             </div>
             <div class="inline pl-2">
@@ -104,6 +107,7 @@
                 id="gender-female"
                 name="gender"
                 value="Female"
+                <%= params.gender ==='Female' ? 'checked' : '' %>
               />
               <label for="gender-female">Female</label>
             </div>
@@ -112,7 +116,8 @@
                 type="radio"
                 id="gender-either"
                 name="gender"
-                value="either"
+                value="Either"
+                <%= params.gender ==='Either' ? 'checked' : '' %>
               />
               <label for="gender-either">Either</label>
             </div>
@@ -120,11 +125,13 @@
           <div class="form-group">
             <label class="font-semibold">Get along with (optional)</label>
             <label for="friendly-dogs">
-              <input type="checkbox" id="friendly-dogs" name="friendly-dogs" />
+              <input type="checkbox" id="friendly-dogs" name="friendly-dogs"
+              <%= params.friendlyTo?.dogs  ? 'checked' : '' %> />
               Dog</label
             >
             <label for="friendly-cats">
-              <input type="checkbox" id="friendly-cats" name="friendly-cats" />
+              <input type="checkbox" id="friendly-cats" name="friendly-cats"
+              <%= params.friendlyTo?.cats  ? 'checked' : '' %> />
               Cat</label
             >
             <label for="friendly-children">
@@ -132,6 +139,7 @@
                 type="checkbox"
                 id="friendly-children"
                 name="friendly-children"
+                <%= params.friendlyTo?.children ? 'checked' : '' %>
               />
               Children</label
             >
@@ -157,7 +165,9 @@
         <div
           class="browse-pets-container grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start border-amber-400 gap-5 lg:gap-10"
         >
-          <% data.forEach(function(pet) { %>
+<% if (data.length === 0) { %>
+  <h3 class="h3-style">No pets found</h3>
+<% } %>          <% data.forEach(function(pet) { %>
 
           <div
             class="bg-amber-50 rounded-lg border-1 shadow-sm border-orange-200"

@@ -46,7 +46,7 @@ const filterPets = function (petsData, params) {
         (params.maxAge >= animal.age || params.maxAge == "") &&
         //Testing for gender
         (params.gender === animal.gender ||
-          params.gender === "either" ||
+          params.gender === "Either" ||
           params.gender == undefined) &&
         // Testing for friendliness
         ((params.friendlyTo.children && animal.friendlyTo.children) ||

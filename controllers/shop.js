@@ -39,11 +39,27 @@ exports.getBrowse = (req, res) => {
   // If /browse, then just fetch all pets
   if (Object.keys(req.query).length == 0) {
     Pet.fetchAll((pets) => {
+      const catBreeds = pets.cat.reduce((acc, cat) => {
+        if (!acc.includes(cat.breed)) {
+          acc.push(cat.breed);
+        }
+        return acc;
+      }, []);
+      const dogBreeds = pets.dog.reduce((acc, dog) => {
+        if (!acc.includes(dog.breed)) {
+          acc.push(dog.breed);
+        }
+        return acc;
+      }, []);
+
       const { dog, cat } = pets;
       const allPets = [...dog, ...cat];
       res.render("./shop/browsePets", {
         username: req.session.username,
         data: allPets,
+        params: {},
+        dogBreeds: catBreeds,
+        catBreeds: dogBreeds,
       });
     });
     return;
@@ -75,9 +91,28 @@ exports.getBrowse = (req, res) => {
   };
 
   Pet.fetchSome((filteredPets) => {
-    res.render("./shop/browsePets", {
-      username: req.session.username,
-      data: filteredPets,
+    Pet.fetchAll((pets) => {
+      const catBreeds = pets.cat.reduce((acc, cat) => {
+        if (!acc.includes(cat.breed)) {
+          acc.push(cat.breed);
+        }
+        return acc;
+      }, []);
+      const dogBreeds = pets.dog.reduce((acc, dog) => {
+        if (!acc.includes(dog.breed)) {
+          acc.push(dog.breed);
+        }
+        return acc;
+      }, []);
+      const sortedCatBreeds = Array.from(catBreeds).sort();
+      const sortedDogBreeds = Array.from(dogBreeds).sort();
+      res.render("./shop/browsePets", {
+        username: req.session.username,
+        data: filteredPets,
+        params: paramList,
+        dogBreeds: sortedDogBreeds,
+        catBreeds: sortedCatBreeds,
+      });
     });
   }, paramList);
 
