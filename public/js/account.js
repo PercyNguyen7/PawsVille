@@ -33,7 +33,7 @@ export function listenLogout() {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async () => {
       try {
-        const response = await fetch("/logout", {
+        const response = await fetch("/accounts/logout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json", // Make sure this is set
@@ -70,7 +70,7 @@ function listenSignUp() {
 
     try {
       // Send form data via POST request to the backend
-      const response = await fetch("/creating-account", {
+      const response = await fetch("/accounts/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Make sure this is set
@@ -111,7 +111,7 @@ function listenSignIn() {
     const formObject = Object.fromEntries(formData.entries());
     try {
       // Send form data via POST request to the backend
-      const response = await fetch("/signing-in", {
+      const response = await fetch("/accounts/sign-in", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Make sure this is set

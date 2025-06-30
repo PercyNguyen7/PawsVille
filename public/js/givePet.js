@@ -22,7 +22,7 @@ function listenSubmitForm() {
     const formData = new FormData(form);
     const formObject = Object.fromEntries(formData.entries());
 
-    const response = await fetch("/givePet", {
+    const response = await fetch("/pets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

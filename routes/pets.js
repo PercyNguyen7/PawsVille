@@ -6,11 +6,14 @@ const rootDir = require("../util/path");
 
 const router = express.Router();
 const petsController = require("../controllers/pets");
+const petsRouter = express.Router();
 
-router.get("/get_all_pets_data", petsController.getAllPetsData);
-router.post("/givePet", petsController.postGivePet);
+petsRouter.get("/", petsController.getAllPetsData);
+petsRouter.post("/", petsController.postGivePet);
 
-router.get("/updatePetDataAtt", petsController.updatePetDataAtt);
+petsRouter.get("/api/attribute", petsController.updatePetDataAtt);
+
+router.use("/accounts", petsRouter);
 
 // router.get("/petsData", petsController.);
 

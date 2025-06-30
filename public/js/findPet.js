@@ -2,7 +2,7 @@
 
 // Get pet data
 async function fetchPetData() {
-  const response = await fetch("/get_all_pets_data", {
+  const response = await fetch("/pets", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

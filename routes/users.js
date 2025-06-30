@@ -6,11 +6,14 @@ const rootDir = require("../util/path");
 const userController = require("../controllers/users");
 
 const router = express.Router();
+const accountsRouter = express.Router();
 
-router.post("/logout", userController.postLogout);
+accountsRouter.post("/logout", userController.postLogout);
 
 // in between post request for user creating an account
-router.post("/creating-account", userController.postCreatingAccount);
+accountsRouter.post("/create", userController.postCreatingAccount);
 
-router.post("/signing-in", userController.postSigningIn);
+accountsRouter.post("/sign-in", userController.postSigningIn);
+
+router.use("/accounts", accountsRouter);
 module.exports = router;
