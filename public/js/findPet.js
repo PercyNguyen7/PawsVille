@@ -40,40 +40,44 @@ function ageRangeVerified() {
 function listenCatRadio() {
   const formPetCatRadio = document.querySelector("#cat-radio");
   formPetCatRadio.addEventListener("change", function (event) {
-    const dogBreedSelectWrapper = document.getElementById(
-      "dog-breed-select-wrapper"
-    );
-    const catBreedSelectWrapper = document.getElementById(
-      "cat-breed-select-wrapper"
-    );
-    dogBreedSelectWrapper.style.display = "none";
-    catBreedSelectWrapper.style.display = "block";
-    // dogBreedSelect.style.opacity = "0.5";
-    // dogBreedSelect.style.pointerEvents = "none";
-    // if (catBreedSelect.style.opacity === "0.5") {
-    // catBreedSelect.style.opacity = "1";
-    // catBreedSelect.style.pointerEvents = "auto";
-    // }
+    // const dogBreedSelectWrapper = document.getElementById(
+    //   "dog-breed-select-wrapper"
+    // );
+    // const catBreedSelectWrapper = document.getElementById(
+    //   "cat-breed-select-wrapper"
+    // );
+    // dogBreedSelectWrapper.style.display = "none";
+    // catBreedSelectWrapper.style.display = "block";
+
+    const dogBreedSelect = document.querySelector("#dog-breed-select");
+    const catBreedSelect = document.querySelector("#cat-breed-select");
+    dogBreedSelect.style.opacity = "0.5";
+    dogBreedSelect.style.pointerEvents = "none";
+    if (catBreedSelect.style.opacity === "0.5") {
+      catBreedSelect.style.opacity = "1";
+      catBreedSelect.style.pointerEvents = "auto";
+    }
   });
 }
 function listenDogRadio() {
   const formPetDogRadio = document.getElementById("dog-radio");
   formPetDogRadio.addEventListener("change", function (event) {
-    const dogBreedSelectWrapper = document.getElementById(
-      "dog-breed-select-wrapper"
-    );
-    const catBreedSelectWrapper = document.getElementById(
-      "cat-breed-select-wrapper"
-    );
-    catBreedSelectWrapper.style.display = "none";
-    // catBreedSelect.style.opacity = "0.5";
-    // catBreedSelect.style.pointerEvents = "none";
-    dogBreedSelectWrapper.style.display = "block";
-    // if (dogBreedSelect.style.opacity === "0.5") {
-
-    // dogBreedSelect.style.opacity = "1";
-    // dogBreedSelect.style.pointerEvents = "auto";
-    // }
+    // const dogBreedSelectWrapper = document.getElementById(
+    //   "dog-breed-select-wrapper"
+    // );
+    // const catBreedSelectWrapper = document.getElementById(
+    //   "cat-breed-select-wrapper"
+    // );
+    // catBreedSelectWrapper.style.display = "none";
+    // dogBreedSelectWrapper.style.display = "block";
+    const dogBreedSelect = document.querySelector("#dog-breed-select");
+    const catBreedSelect = document.querySelector("#cat-breed-select");
+    catBreedSelect.style.opacity = "0.5";
+    catBreedSelect.style.pointerEvents = "none";
+    if (dogBreedSelect.style.opacity === "0.5") {
+      dogBreedSelect.style.opacity = "1";
+      dogBreedSelect.style.pointerEvents = "auto";
+    }
   });
 }
 function listenSubmitForm(pets) {

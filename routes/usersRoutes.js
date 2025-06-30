@@ -8,12 +8,11 @@ const userController = require("../controllers/users");
 const router = express.Router();
 const accountsRouter = express.Router();
 
-accountsRouter.post("/logout", userController.postLogout);
+router.post("/logout", userController.postLogout);
 
 // in between post request for user creating an account
-accountsRouter.post("/create", userController.postCreatingAccount);
+router.post("/create", userController.postCreatingAccount);
 
-accountsRouter.post("/sign-in", userController.postSigningIn);
+router.post("/sign-in", userController.postSigningIn);
 
-router.use("/accounts", accountsRouter);
 module.exports = router;

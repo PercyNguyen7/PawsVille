@@ -9,9 +9,9 @@ const helmet = require("helmet");
 // const compression = require("compression");
 // const morgan
 
-const shopRoutes = require("./routes/shop.js");
-const userRoutes = require("./routes/users.js");
-const petsRoutes = require("./routes/pets.js");
+const shopRoutes = require("./routes/shopRoutes.js");
+const userRoutes = require("./routes/usersRoutes.js");
+const petsRoutes = require("./routes/petsRoutes.js");
 
 // ************ MIDLEWARE ***************************
 // Helmet middleware for secure responses
@@ -62,8 +62,8 @@ app.set("views", path.join(__dirname, "./views"));
 
 // ************************* Routes *************************
 app.use(shopRoutes);
-app.use(userRoutes);
-app.use(petsRoutes);
+app.use("/accounts", userRoutes);
+app.use("/pets", petsRoutes);
 
 app.use((req, res) => {
   res.status(400).render("404", { username: req.session.username });
