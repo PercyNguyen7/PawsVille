@@ -5,7 +5,7 @@ const app = express();
 const fs = require("node:fs");
 const PORT = process.env.port || 3000;
 
-const db = require("./util/database");
+// const db = require("./util/database");
 
 const helmet = require("helmet");
 // const compression = require("compression");
@@ -67,11 +67,11 @@ app.use(shopRoutes);
 app.use(userRoutes);
 app.use(petsRoutes);
 
-db.execute("SELECT * FROM pets")
-  .then((res) => {
-    console.log(res[0], res[1]);
-  })
-  .catch((err) => console.log(err));
+// db.execute("SELECT * FROM pets")
+//   .then((res) => {
+//     console.log(res[0], res[1]);
+//   })
+//   .catch((err) => console.log(err));
 
 app.use((req, res) => {
   res.status(400).render("404", { username: req.session.username });
