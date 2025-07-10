@@ -17,7 +17,7 @@ PawsVille is a fictional Pet Adoption website specific for cats and dogs! The ce
 ### 2. Obstacles   
   1. Separation of File Logic   
   - **Challenge:**   
-    As the project's complexity evolves, the server.js file become pacted and the pet object (which represents any singular pet) containing more attributes, the backend JS files demanded to be split into logical units.   
+    Separation of JS codes into logical moduless.   
   - **Solution:**  
      Adopting the Model-view-controller software architectural pattern  
       - Model: The central product of PawsVille , the pets, are stored in a Pet class in `model/pet.js`. All relevant functions that manipulate this model data (such as get pets, filter pets, ...) are also stored under the Model.  
